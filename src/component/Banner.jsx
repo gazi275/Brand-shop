@@ -7,18 +7,18 @@ const Banner = () => {
 
             <div id="default-carousel" class="relative w-full" data-carousel="slide">
  {/* {<!-- Carousel wrapper -->} */}
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-[600px] lg:h-[700px] ">
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-[500px] lg:h-[550px] ">
          {/* {<!-- Item 1 -->} */}
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="https://i.ibb.co/6WXTxr4/pexels-ella-olsson-1640772.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
         </div>
        {/* { <!-- Item 2 -->} */}
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i.ibb.co/S6mRHYk/pexels-viktoria-alipatova-4038947.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+            <img src="https://i.ibb.co/XynGcmN/shourav-sheikh-a66s-Gf-Onnq-Q-unsplash.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
         </div>
         {/* <!-- Item 3 --> */}
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i.ibb.co/s5LgP6S/pexels-flo-dahm-541216.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+            <img src="https://i.ibb.co/yR36ZyQ/brooke-lark-Hl-Ncigv-Ui4-Q-unsplash.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
         </div>
         {/* <!-- Item 4 --> */}
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
