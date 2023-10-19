@@ -1,11 +1,11 @@
 import React from 'react';
 
-const GoogleLogin = () => {
+const Contact = () => {
     return (
         <div>
-            
+            <h2>gazi</h2>
         </div>
     );
 };
 
-export default GoogleLogin;
+export default Contact;

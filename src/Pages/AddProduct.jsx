@@ -2,8 +2,8 @@
 
 const AddProduct = () => {
     return (
-        <div>
-            
+        <div >
+            <h2>i will do it later</h2>
         </div>
     );
 };

@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import { initFlowbite } from "flowbite";
+import Navbar from "../component/Navbar";
+import { Toaster } from "react-hot-toast";
 
 const Root = () => {
     useEffect(() => {
@@ -8,8 +10,9 @@ const Root = () => {
     })
     return (
         <div>
-            
+            <Navbar></Navbar>
             <Outlet></Outlet>
+            <Toaster></Toaster>
         </div>
     );
 };
