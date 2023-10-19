@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
 import { AuthContext } from "../provider/AuthProvider";
 import { useContext } from "react";
@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 const Register = () => {
 
 	const {  createUser } = useContext(AuthContext)
-    
+    const navigate= useNavigate()
 
 
     const handleSubmit = (e) => {
@@ -32,10 +32,9 @@ const Register = () => {
         createUser(email, password)
             .then(res => {
                 toast.success('you have registered  successfully Please Go to login');
-				navigate('/login')
-                
-            })
-            .catch(error => {
+				Navigate('/login')
+                })
+              .catch(error => {
                 console.log(error.message);
                 toast.error("Please fil up your form correctly")
             })
