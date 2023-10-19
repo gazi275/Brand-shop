@@ -1,0 +1,40 @@
+ [
+      {
+        "id": 1,
+        "brand": "Coca-Cola",
+        "img": "https://i.ibb.co/sqTdmt6/cocacola.jpg",
+        "slogan": "To refresh the world and make a difference"
+      },
+      {
+        "id": 2,
+        "brand": "McDonald's",
+        "img": "https://i.ibb.co/XjH949Q/mcdonalds.jpg",
+        "slogan": "You've got this. We've got you"
+      },
+      {
+        "id": 3,
+        "brand": "Pepsi",
+        "img": "https://i.ibb.co/RzyCTv1/pepsi.jpg",
+        "slogan": "To refresh the world and make a difference"
+      },
+      {
+        "id": 4,
+        "brand": "Nestle",
+        "img": "https://i.ibb.co/4NdfKRY/nestle-case-study-logo-feaure-image.jpg",
+        "slogan": "We are Nestlé. The Good food, Good life company"
+      },
+      {
+        "id": 5,
+        "brand": "Kellogg's",
+        "img": "https://i.ibb.co/qdHGPXW/istockphoto-1494365978-1024x1024.jpg",
+        "slogan": "Let's Make Today Great"
+      },
+      {
+        "id": 6,
+        "brand": "Starbuck",
+        "img": "https://i.ibb.co/z6gq5Ff/starbuck.jpg",
+        "slogan": "With every cup, with every conversation, with every community"
+      }
+    ]
+  
+  

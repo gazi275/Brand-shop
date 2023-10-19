@@ -12,6 +12,7 @@ import Contact from './Pages/Contact';
 import Login from './login/Login';
 import Register from './login/Register';
 import AuthProvider from './provider/AuthProvider';
+import PrivateRoute from './privateRoute\'/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -21,15 +22,20 @@ const router = createBrowserRouter([
     children: [
       {
        path:"/",
-       element: <Home></Home>
+       element: <Home></Home>,
+       loader :()=>fetch('/brand.json')
       },
       {  
       path:"/addproduct",
-      element :<AddProduct></AddProduct>
+      element :<PrivateRoute>
+        <AddProduct></AddProduct>
+        </PrivateRoute>
       },
       {
         path:"/myCart",
-        element: <MyCart></MyCart>
+        element: <PrivateRoute>
+          <MyCart></MyCart>
+        </PrivateRoute>
        },
        {
         path:"/contact",

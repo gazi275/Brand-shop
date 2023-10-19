@@ -1,18 +1,21 @@
+import { useLoaderData } from "react-router-dom";
 import Banner from "../component/Banner";
-import Navbar from "../component/Navbar";
-import Card from "./Card";
+
 import Footer from "./Footer";
 import Gellery from "./Gellery";
 import Testimonial from "./Testimonial";
+import Cards from "../homeCard/Cards";
 
 
 
 const Home = () => {
+    const cards = useLoaderData();
+   
     return (
         <div>
            
            <Banner></Banner>
-           <Card></Card>
+           <Cards cards={cards} ></Cards>
            <Gellery></Gellery>
            <Testimonial></Testimonial>
 
