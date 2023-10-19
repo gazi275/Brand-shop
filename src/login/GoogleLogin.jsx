@@ -8,7 +8,7 @@ const GoogleLogin = () => {
 
     const navigate = useNavigate()
     const { user, googleLogin } = useContext(AuthContext);
-console.log(googleLogin);
+
 
    const handleSocialLogin = () => {
        googleLogin()

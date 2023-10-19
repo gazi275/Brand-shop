@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
 import { AuthContext } from "../provider/AuthProvider";
 import { useContext } from "react";
+import toast from "react-hot-toast";
 
 
 const Register = () => {
 
 	const {  createUser } = useContext(AuthContext)
-    console.log(createUser);
+    
 
 
     const handleSubmit = (e) => {
@@ -30,7 +31,8 @@ const Register = () => {
 
         createUser(email, password)
             .then(res => {
-                toast.success('you have registered  successfully');
+                toast.success('you have registered  successfully Please Go to login');
+				navigate('/login')
                 
             })
             .catch(error => {
@@ -50,7 +52,7 @@ const Register = () => {
         <div>
           
 
-<div class="h-full bg-gray-400 dark:bg-gray-900">
+<div class="h-full bg-blue-200 dark:bg-gray-900">
 	
 	<div class="mx-auto">
 		<div class="flex justify-center px-6 py-12">
@@ -138,9 +140,9 @@ const Register = () => {
 							</a>
 						</div>
 						<div class="text-center">
-							<p class="inline-block text-sm text-blue-500 dark:text-blue-500 align-baseline hover:text-blue-800"
+							<p class="inline-block text-sm text-black dark:text-blue-500 align-baseline hover:text-blue-800"
 								>
-								Already have an account?<Link to="/login"> <span> Login!</span> </Link>
+								Already have an account?<Link to="/login"> <span className="text-blue-500"> Login!</span> </Link>
 							</p>
 						</div>
 						<GoogleLogin></GoogleLogin>
