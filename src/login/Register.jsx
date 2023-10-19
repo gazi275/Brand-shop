@@ -1,6 +1,51 @@
+import { Link } from "react-router-dom";
+import GoogleLogin from "./GoogleLogin";
+import { AuthContext } from "../provider/AuthProvider";
+import { useContext } from "react";
 
 
 const Register = () => {
+
+	const {  createUser } = useContext(AuthContext)
+    console.log(createUser);
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // get field values 
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+
+        const password = e.target.password.value;
+        console.log(name, email, password);
+
+
+        // validation 
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password)) {
+            toast.error('Password must be at least 6 characters,Uppercase-letter and special characters');
+            return;
+        }
+
+
+        createUser(email, password)
+            .then(res => {
+                toast.success('you have registered  successfully');
+                
+            })
+            .catch(error => {
+                console.log(error.message);
+                toast.error("Please fil up your form correctly")
+            })
+    }
+
+
+
+
+
+
+
+
     return (
         <div>
           
@@ -16,7 +61,7 @@ const Register = () => {
 			
 				<div class="w-full lg:w-7/12 bg-white dark:bg-gray-700 p-5 rounded-lg lg:rounded-l-none">
 					<h3 class="py-4 text-2xl text-center text-gray-800 dark:text-white">Create an Account!</h3>
-					<form class="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded">
+					<form onSubmit={handleSubmit} class="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded">
 						<div class="mb-4 md:flex md:justify-between">
 							<div class="mb-4 md:mr-2 md:mb-0">
 								<label class="block mb-2 text-sm font-bold text-gray-700 dark:text-white" for="firstName">
@@ -80,7 +125,7 @@ const Register = () => {
 						<div class="mb-6 text-center">
 							<button
                                 class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
-                                type="button"
+                                type="submit"
                             >
                                 Register Account
                             </button>
@@ -93,11 +138,12 @@ const Register = () => {
 							</a>
 						</div>
 						<div class="text-center">
-							<a class="inline-block text-sm text-blue-500 dark:text-blue-500 align-baseline hover:text-blue-800"
-								href="./index.html">
-								Already have an account? Login!
-							</a>
+							<p class="inline-block text-sm text-blue-500 dark:text-blue-500 align-baseline hover:text-blue-800"
+								>
+								Already have an account?<Link to="/login"> <span> Login!</span> </Link>
+							</p>
 						</div>
+						<GoogleLogin></GoogleLogin>
 					</form>
 				</div>
 			</div>

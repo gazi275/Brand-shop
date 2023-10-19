@@ -1,8 +1,47 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
+import { AuthContext } from "../provider/AuthProvider";
+import { useContext } from "react";
+import toast from "react-hot-toast";
+
 
 
 const Login = () => {
+
+    const {  signin } = useContext(AuthContext) 
+    const navigate= useNavigate()
+ 
+     const handleSubmit = (e) => {
+         e.preventDefault();
+ 
+         
+        
+         const email = e.target.email.value;
+ 
+         const password = e.target.password.value;
+        
+ 
+ 
+       
+         
+ 
+ 
+         signin(email, password)
+             .then(res => {
+                 toast.success('User logged in successfully');
+                 navigate('/')
+             })
+             .catch(error => {
+                 toast.error("your email or password is incorrect")
+             })
+     }
+ 
+ 
+
+
+
+
+
     return (
         <div>
            
@@ -28,7 +67,7 @@ const Login = () => {
                 <p class="text-gray-100 uppercase">
                      Use your email  & Password
                 </p>
-                <form  class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
+                <form onSubmit={handleSubmit} class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
                     <div class="pb-2 pt-4">
                         <input type="email" name="email" id="email" placeholder="Email" class="block w-full p-4 text-lg rounded-sm bg-black"/>
                     </div>
@@ -48,7 +87,7 @@ const Login = () => {
         <div className="text-sm font-medium text-gray-500 dark:text-gray-300 my-4">
             Not registered?<Link to="/register"><span  className="text-blue-700 hover:underline dark:text-blue-500">Create account</span></Link> 
         </div>
-                    
+            <GoogleLogin></GoogleLogin>
                 </form>
             </div>
         </div>
