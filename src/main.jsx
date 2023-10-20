@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, useParams } from 'react-router-dom';
 import Root from './root/Root.jsx';
 import ErrorPage from './error/ErrorPage.jsx';
 import Home from './home/Home.jsx';
@@ -13,6 +13,7 @@ import Login from './login/Login';
 import Register from './login/Register';
 import AuthProvider from './provider/AuthProvider';
 import PrivateRoute from './privateRoute\'/PrivateRoute';
+import ProductCollection from './Products/ProductCollection';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,8 @@ const router = createBrowserRouter([
       path:"/addproduct",
       element :<PrivateRoute>
         <AddProduct></AddProduct>
-        </PrivateRoute>
+        </PrivateRoute>,
+        
       },
       {
         path:"/myCart",
@@ -49,6 +51,21 @@ const router = createBrowserRouter([
         path:"/register",
         element:<Register></Register>
        },
+       {
+        path: "/product/:brand",
+        element:<PrivateRoute>
+         <ProductCollection></ProductCollection>
+         </PrivateRoute>,
+       loader:({params})=>{
+        console.log(params);
+
+        return fetch(`http://localhost:5001/product/${params.brand}`)
+      }
+        
+       
+        
+      
+     },
 
     ],
   },

@@ -7,7 +7,7 @@ const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false)
   const [userOpen, setUserOpen] = useState(false)
   const { user ,logOut } = useContext(AuthContext)
-  console.log(user);
+ 
 
   const HandlelogOut=()=>{
     logOut()
