@@ -18,7 +18,7 @@ console.log(myCard);
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Designed for business teams like yours</h2>
           <p class="text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
       </div>
-      <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+      <div class="space-y-8 justify-center items-center md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
 
              {
                 myCard?.map(cart=> <Cart key={cart.id} cart={cart}></Cart>)
