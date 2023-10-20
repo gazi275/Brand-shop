@@ -1,9 +1,26 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
 const ProductDetails = () => {
     const details=useLoaderData()
-    console.log(details);
+    
+    const handleCart = () => {
+
+        fetch("http://localhost:5001/details", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(details),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
+
+    
+
     return (
         <div>
           <section class="container mx-auto p-10 md:py-12 px-0 md:p-8 md:px-0">
@@ -48,7 +65,8 @@ const ProductDetails = () => {
             <h1 class="text-3xl my-5">{details.name}</h1>
             <p class="mb-5">{details.description}</p>
             <h2 class="font-semibold mb-5">{details.price}</h2>
-            <button class="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">Add To Cart</button>
+          
+            <button onClick={handleCart}  class="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">Add To Cart</button>
         </section>
 
        

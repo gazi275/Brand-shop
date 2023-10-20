@@ -1,7 +1,11 @@
+import { useLoaderData, useParams } from "react-router-dom";
 
 
-const AddProduct = () => {
- 
+const Update = () => {
+     
+const {id}=useParams();
+
+console.log(id);
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -16,21 +20,21 @@ const AddProduct = () => {
          const description = e.target.description.value;
        
 
-       const product={name,brand,price,category,image,rating,description};
-       console.log(product);
-       fetch("http://localhost:5001/product", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-  }
+       const updatedProduct={name,brand,price,category,image,rating,description};
+       console.log(updatedProduct);
        
+       fetch(`http://localhost:5001/updatedproduct/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+  }
     
 
 
@@ -38,12 +42,13 @@ const AddProduct = () => {
 
 
 
+
     return (
-        <div >
+        <div>
           <section class="bg-blue-200 dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
       <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a new product</h2>
-      <form onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
           <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
               <div class="sm:col-span-2">
                   <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
@@ -75,7 +80,7 @@ const AddProduct = () => {
               </div> 
           </div>
           <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-blue-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-              Add product
+              Update Product
           </button>
       </form>
   </div>
@@ -84,4 +89,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default Update;
