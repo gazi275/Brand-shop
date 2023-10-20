@@ -5,7 +5,7 @@ import ProductShow from "./ProductShow";
 const ProductCollection = () => {
     const products=useLoaderData();
     
-    console.log(products);
+  
     
     return (
         <div>
@@ -15,15 +15,15 @@ const ProductCollection = () => {
     <div class="relative h-56 w-full overflow-hidden rounded-lg md:h-[600px] lg:h[600px] ">
          {/* {<!-- Item 1 -->} */}
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i.ibb.co/FVfFfzD/ADD-3.webp" class="absolute block w-full object-fill -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+            <img src="https://i.ibb.co/FVfFfzD/ADD-3.webp" class="absolute block w-full object-contain -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
         </div>
        {/* { <!-- Item 2 -->} */}
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i.ibb.co/KKwnSJF/kfc-add.jpg" class="absolute block w-full object-fill -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+            <img src="https://i.ibb.co/KKwnSJF/kfc-add.jpg" class="absolute block w-full object-contain -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
         </div>
         {/* <!-- Item 3 --> */}
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i.ibb.co/DGRRK7R/burger-add.jpg" class="absolute block w-full object-fill  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+            <img src="https://i.ibb.co/DGRRK7R/burger-add.jpg" class="absolute block w-full object-contain  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
         </div>
        
        
